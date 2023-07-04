@@ -251,13 +251,15 @@ paket-files/
 .idea/
 *.sln.iml
 
-
 # ShopEcommerce
-LPK.ShopEcommerce/Logs/*
-
-*.db
-*.db-shm
-*.db-wal
+src/LPK.ShopEcommerce.Web/Logs/*
+src/LPK.ShopEcommerce.Web.Host/Logs/*
+src/LPK.ShopEcommerce.AuthServer/Logs/*
+src/LPK.ShopEcommerce.HttpApi.Host/Logs/*
+src/LPK.ShopEcommerce.HttpApi.Host/Logs/*
+src/LPK.ShopEcommerce.DbMigrator/Logs/*
+src/LPK.ShopEcommerce.Blazor.Server/Logs/*
+src/LPK.ShopEcommerce.Blazor.Server.Tiered/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*

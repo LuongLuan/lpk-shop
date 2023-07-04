@@ -10,7 +10,7 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44382/',
+    issuer: 'https://localhost:44388/',
     redirectUri: baseUrl,
     clientId: 'ShopEcommerce_App',
     responseType: 'code',
@@ -19,7 +19,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44382',
+      url: 'https://localhost:44388',
       rootNamespace: 'LPK.ShopEcommerce',
     },
   },

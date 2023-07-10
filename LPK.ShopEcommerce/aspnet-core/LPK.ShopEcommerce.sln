@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPK.ShopEcommerce.HttpApi.H
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{8508FA31-8F3C-4499-AC57-0852FE26BF7C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{027E07D7-4D8D-4969-9621-7F34D956F072}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{027E07D7-4D8D-4969-9621-7F34D956F072}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{1A5312C3-A906-4198-9422-27C39E9574E3}"
 EndProject
@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{4FA0229E-1F9C-45CA-B16E-D2AD699E623C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPK.ShopEcommerce.AuthServer", "LPK.ShopEcommerce.AuthServer\LPK.ShopEcommerce.AuthServer.csproj", "{47CE8994-9887-4DCB-B09E-A676C0266030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPK.ShopEcommerce.AuthServer", "LPK.ShopEcommerce.AuthServer\LPK.ShopEcommerce.AuthServer.csproj", "{47CE8994-9887-4DCB-B09E-A676C0266030}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LPK.ShopEcommerce.Admin.Application", "src\LPK.ShopEcommerce.Admin.Application\LPK.ShopEcommerce.Admin.Application.csproj", "{00ECEA3E-C620-45C6-A8FC-EA6783EECC3B}"
 EndProject

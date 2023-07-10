@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LPK.ShopEcommerce.ProductAttribuities
 {
-    public class ProductAttributes
+    public class ProductAttribute
     {
         public Guid Id { get; set; }
         public string Code { get; set; }

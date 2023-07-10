@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace LPK.ShopEcommerce.InventoryTickets
 {
-    public class InventoryTick : AuditedAggregateRoot<Guid>
+    public class InventoryTicket : AuditedAggregateRoot<Guid>
     {
         public string Code { get; set; }
         public TicketType TicketType { get; set; }

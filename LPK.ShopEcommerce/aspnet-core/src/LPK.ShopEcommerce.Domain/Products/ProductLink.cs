@@ -7,7 +7,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace LPK.ShopEcommerce.Products
 {
-    public class ProductLinks : Entity
+    public class ProductLink : Entity
     {
         public Guid ProductId { get; set; }
         public Guid LinkedProductId { get; set; }

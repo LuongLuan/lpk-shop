@@ -1,4 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LPK.ShopEcommerce.Attributies;
+using LPK.ShopEcommerce.Configurations.Inventories;
+using LPK.ShopEcommerce.Configurations.InventoryTickets;
+using LPK.ShopEcommerce.Configurations.Manufacturers;
+using LPK.ShopEcommerce.Configurations.Orders;
+using LPK.ShopEcommerce.Configurations.ProductAttributies;
+using LPK.ShopEcommerce.Configurations.ProductCategories;
+using LPK.ShopEcommerce.Configurations.Products;
+using LPK.ShopEcommerce.Configurations.Promotions;
+using LPK.ShopEcommerce.Inventories;
+using LPK.ShopEcommerce.InventoryTickets;
+using LPK.ShopEcommerce.Manufacturies;
+using LPK.ShopEcommerce.Orders;
+using LPK.ShopEcommerce.ProductCategories;
+using LPK.ShopEcommerce.Products;
+using LPK.ShopEcommerce.Promotions;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -53,6 +69,34 @@ public class ShopEcommerceDbContext :
 
     #endregion
 
+    #region Ecommerce
+    public DbSet<Attribute> Attributes { get; set; }
+    public DbSet<Inventory> Inventories { get; set; }
+    public DbSet<InventoryTicket> InventoryTickets { get; set; }
+    public DbSet<InventoryTicketItem> InventoryTicketItems { get; set; }
+    public DbSet<Manufacturer> Manufactures { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<OrderTransaction> OrderTransactions { get; set; }
+    public DbSet<ProductCategory> ProductCategories { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<ProductAttributeDateTime> ProductAttributesDateTime { get; set; }
+    public DbSet<ProductAttributeDecimail> ProductAttributeDecimails { get; set; }
+    public DbSet<ProductAttributeInt> ProductAttributesInts { get; set; }
+    public DbSet<ProductAttributeText> ProductAttributeTexts { get; set; }
+    public DbSet<ProductLink> ProductLinks { get; set; }
+    public DbSet<ProductReview> ProductReviews { get; set; }
+    public DbSet<ProductTag> ProductTags { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+    public DbSet<Promotion> Promotions { get; set; }
+    public DbSet<PromotionCategory> PromotionCategories { get; set; }
+    public DbSet<PromotionManufacturer> PromotionManufacturers { get; set; }
+    public DbSet<PromotionProduct> PromotionProducts { get; set; }
+    public DbSet<PromotionUsageHistory> PromotionUsageHistories { get; set; }
+
+
+    #endregion
+
     public ShopEcommerceDbContext(DbContextOptions<ShopEcommerceDbContext> options)
         : base(options)
     {
@@ -76,11 +120,36 @@ public class ShopEcommerceDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(ShopEcommerceConsts.DbTablePrefix + "YourEntities", ShopEcommerceConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.ApplyConfiguration(new ProductAttributeConfiguration());
+
+        builder.ApplyConfiguration(new InventoryConfiguration());
+
+        builder.ApplyConfiguration(new InventoryTicketConfiguration());
+        builder.ApplyConfiguration(new InventoryTicketItemConfiguration());
+
+        builder.ApplyConfiguration(new ManufacturerConfiguration());
+
+        builder.ApplyConfiguration(new OrderConfiguration());
+        builder.ApplyConfiguration(new OrderItemConfiguration());
+        builder.ApplyConfiguration(new OrderTransactionConfiguration());
+
+        builder.ApplyConfiguration(new ProductCategoryConfiguration());
+
+        builder.ApplyConfiguration(new ProductConfiguration());
+        builder.ApplyConfiguration(new ProductLinkConfiguration());
+        builder.ApplyConfiguration(new ProductReviewConfiguration());
+        builder.ApplyConfiguration(new ProductTagConfiguration());
+        builder.ApplyConfiguration(new TagConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeDateTimeConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeDecimalConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeIntConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeTextConfiguration());
+        builder.ApplyConfiguration(new ProductAttributeVarcharConfiguration());
+
+        builder.ApplyConfiguration(new PromotionConfiguration());
+        builder.ApplyConfiguration(new PromotionCategoryConfiguration());
+        builder.ApplyConfiguration(new PromotionManufacturerConfiguration());
+        builder.ApplyConfiguration(new PromotionProductConfiguration());
+        builder.ApplyConfiguration(new PromotionUsageHistoryConfiguration());
     }
 }

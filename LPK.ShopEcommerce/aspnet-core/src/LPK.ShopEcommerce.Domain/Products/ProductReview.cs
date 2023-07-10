@@ -5,7 +5,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace LPK.ShopEcommerce.Products
 {
-    public class ProductReview:CreationAuditedEntity<Guid>
+    public class ProductReview : CreationAuditedEntity<Guid>
     {
         public Guid ProductId { get; set; }
         public Guid ParentId { get; set; }

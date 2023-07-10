@@ -4,6 +4,7 @@ using LPK.ShopEcommerce.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace LPK.ShopEcommerce.Migrations
 {
     [DbContext(typeof(ShopEcommerceDbContext))]
-    partial class ShopEcommerceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230710101322_CreateEntitiesBusiniss")]
+    partial class CreateEntitiesBusiniss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

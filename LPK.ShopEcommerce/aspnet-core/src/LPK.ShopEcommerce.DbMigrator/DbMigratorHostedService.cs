@@ -7,6 +7,7 @@ using LPK.ShopEcommerce.Data;
 using Serilog;
 using Volo.Abp;
 using Volo.Abp.Data;
+using LPK.ShopEcommerce.Seeding;
 
 namespace LPK.ShopEcommerce.DbMigrator;
 
@@ -37,6 +38,11 @@ public class DbMigratorHostedService : IHostedService
                 .ServiceProvider
                 .GetRequiredService<ShopEcommerceDbMigrationService>()
                 .MigrateAsync();
+
+            await application
+               .ServiceProvider
+               .GetRequiredService<IdentityDataSeeder>()
+               .SeedAsync("lpk@admin.com", "LPK@2021");
 
             await application.ShutdownAsync();
 
